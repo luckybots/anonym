@@ -1,1 +1,5 @@
-/config.json
+/config.json*
+/state
+/logs
+/csv_logs
+/*.session

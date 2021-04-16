@@ -1,6 +1,14 @@
 {
+  "hash_salt": "",
+  "hash_bytes": 10,
   "bot_token": "",
   "admin_password": "",
-  "enabled_group_ids": [
-  ]
+  "forbidden_entities": [
+    "mention",
+    "url",
+    "text_link",
+    "email",
+    "phone_number"
+  ],
+  "enable_only_for": []
 }
