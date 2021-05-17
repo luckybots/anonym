@@ -1,5 +1,5 @@
 import inject
-from tengine import MessagesLogger
+from tengi import MessagesLogger
 
 
 def create_daemon_instances():

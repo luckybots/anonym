@@ -1,6 +1,6 @@
 import inject
 import logging
-from tengine.command.command_handler import *
+from tengi.command.command_handler import *
 
 from anocom.state.enabled_chats import EnabledChats
 

@@ -1,3 +1,3 @@
-from tengine import tengine_command_params
+from tengi import tengi_command_params
 
-command_params = tengine_command_params.params
+command_params = tengi_command_params.params

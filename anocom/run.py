@@ -1,7 +1,7 @@
 # noinspection PyUnresolvedReferences
 from anocom.setup import logs  # has import side effect
 import inject
-from tengine import App
+from tengi import App
 
 from anocom.setup.dependencies import bind_app_dependencies
 from anocom.setup.daemons import create_daemon_instances

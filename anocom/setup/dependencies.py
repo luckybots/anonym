@@ -1,6 +1,6 @@
 from inject import Binder
 import inject
-from tengine import *
+from tengi import *
 
 from anocom.setup import constants
 from anocom.command.params import command_params
