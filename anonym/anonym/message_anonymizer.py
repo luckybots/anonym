@@ -5,7 +5,7 @@ from tengi.telegram.inbox_handler import *
 from tengi import TelegramBot, telegram_bot_utils, Hasher, Config
 from tengi.telegram.constants import TELEGRAM_USER_ID, GROUP_ANONYM_BOT_ID
 
-from anocom.state.enabled_chats import EnabledChats
+from anonym.state.enabled_chats import EnabledChats
 
 logger = logging.getLogger(__file__)
 

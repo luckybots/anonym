@@ -2,11 +2,11 @@ from inject import Binder
 import inject
 from tengi import *
 
-from anocom.setup import constants
-from anocom.command.params import command_params
-from anocom.state.enabled_chats import EnabledChats
-from anocom.anonym.message_anonymizer import MessageAnonymizer
-from anocom.command.handler_enabling import CommandHandlerEnabling
+from anonym.setup import constants
+from anonym.command.params import command_params
+from anonym.state.enabled_chats import EnabledChats
+from anonym.anonym.message_anonymizer import MessageAnonymizer
+from anonym.command.handler_enabling import CommandHandlerEnabling
 
 
 def bind_app_dependencies(binder: Binder):

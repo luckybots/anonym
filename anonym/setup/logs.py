@@ -1,7 +1,7 @@
 import time
 import logging.config
 
-from anocom.setup import constants
+from anonym.setup import constants
 
 
 class UTCFormatter(logging.Formatter):

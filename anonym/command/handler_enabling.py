@@ -2,7 +2,7 @@ import inject
 import logging
 from tengi.command.command_handler import *
 
-from anocom.state.enabled_chats import EnabledChats
+from anonym.state.enabled_chats import EnabledChats
 
 logger = logging.getLogger(__file__)
 
