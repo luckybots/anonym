@@ -1,6 +1,6 @@
 # Anonym
 
-Anonymizes messages in chats. Give bot an admin permission to delete messages in your chat.
+Telegram bot that anonymizes messages in chats. Give bot an admin permission to delete messages in your chat.
 
 # How to use Anonym
 
