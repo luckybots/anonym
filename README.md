@@ -6,7 +6,7 @@ Telegram bot that anonymizes messages in chats. Give bot an admin permission to 
 
 You can either use an existing Anonym bot available at https://t.me/anonym10_bot. In order to do that:
 
-1. Give Anonym bot an admin permission to delete messages in your chat.
+1. Give Anonym bot an admin permission to delete messages in your chat. If you want users to be kicked from the chat (useful in case of anonymizing comments to channel post) -- give the bot an admin permission  to ban users -- it'll kick users and unban them at the moment, so they'll be able to write new messages later.
 
 # Build Anonym from sources
 
