@@ -21,6 +21,11 @@ class CommandHandlerEnabling(CommandHandler):
 
     def handle(self, context: CommandContext):
         chat_id = context.get_mandatory_arg('chat_id')
+        try:
+            chat_id = int(chat_id)
+        except ValueError:
+            context.reply(f'chat_id must be integer')
+            return
         if context.command == '/enable':
             if self.enabled_chats.is_enabled(chat_id):
                 context.reply('Already enabled')

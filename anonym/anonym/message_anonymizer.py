@@ -27,7 +27,7 @@ class MessageAnonymizer(TelegramInboxHandler):
 
         if not self.enabled_chats.is_enabled(chat_id):
             enable_only_for = self.config['enable_only_for']
-            if len(enable_only_for) > 0:
+            if (len(enable_only_for) > 0) and (chat_id not in enable_only_for):
                 logger.info(f'Ignoring message in disabled chat {chat_hash}')
                 return False
             else:
