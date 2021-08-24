@@ -56,7 +56,8 @@ class MessageAnonymizer(TelegramInboxHandler):
         try:
             member = self.telegram_bot.bot.get_chat_member(chat_id=chat_id, user_id=sender_user_id)
             is_sender_admin = (member.status in ('creator', 'administrator')) or (sender_user_id == GROUP_ANONYM_BOT_ID)
-            if not is_sender_admin:
+            kick_users = self.config['kick_users']
+            if kick_users and (not is_sender_admin):
                 try:
                     self.telegram_bot.bot.kick_chat_member(chat_id=chat_id, user_id=sender_user_id)
                     # Kicked user is automatically banned thus won't be allowed to post future comments
@@ -85,54 +86,8 @@ class MessageAnonymizer(TelegramInboxHandler):
         if should_resend:
             self.telegram_bot.resend_message(chat_id=chat_id, src_message=message)
 
-            # if message.content_type == 'text':
-            #     if message.reply_to_message is None:
-            #         bot.send_message(message.chat.id, message.html_text)
-            #     else:
-            #         bot.reply_to(message.reply_to_message, message.html_text)
-            # elif message.content_type == 'photo':
-            #     photos = message.json['photo']
-            #     if len(photos) >= 1:
-            #         bot.send_photo(message.chat.id,
-            #                        photos[0]['file_id'],
-            #                        caption=message.html_caption,
-            #                        reply_to_message_id=reply_to_message_id)
-            #     else:
-            #         print("Strange photo with 0 photos", message)
-            # elif message.content_type == 'sticker':
-            #     bot.send_sticker(message.chat.id,
-            #                      message.sticker.file_id,
-            #                      reply_to_message_id=reply_to_message_id)
-            # elif message.content_type == 'document':
-            #     bot.send_document(message.chat.id,
-            #                       message.document.file_id,
-            #                       caption=message.html_caption,
-            #                       reply_to_message_id=reply_to_message_id)
-            # elif message.content_type == 'audio':
-            #     bot.send_audio(message.chat.id,
-            #                    message.audio.file_id,
-            #                    caption=message.html_caption,
-            #                    reply_to_message_id=reply_to_message_id)
-            # elif message.content_type == 'video':
-            #     bot.send_video(message.chat.id,
-            #                    message.video.file_id,
-            #                    caption=message.html_caption,
-            #                    reply_to_message_id=reply_to_message_id)
-            # elif message.content_type in ('video_note', 'voice', 'location', 'contact'):
-            #     # These are ignored as potentially de-anonymising messages
-            #     pass
-            # else:
-            #     logger.error(f'Unhandled content_type: {message}')
+
         else:
             logger.debug('Skipping message resend as it contains forbidden entities')
 
         return True
-
-    # @bot.message_handler(func=lambda m: True, content_types=['new_chat_members', 'left_chat_member'])
-    # def handle_member_join_leave(message):
-    #     try:
-    #         bot.delete_message(message.chat.id, message.message_id)
-    #     except Exception as e:
-    #         logger.exception(e)
-
-

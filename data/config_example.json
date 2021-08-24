@@ -7,5 +7,6 @@
   ],
   "enable_only_for": [],
   "response_start": "Anonym bot anonymizes messages in chats. Give bot an admin permission to delete messages in your chat.",
-  "response_help": "Give bot an admin permission to delete messages in your chat."
+  "response_help": "Give bot an admin permission to delete messages in your chat.",
+  "kick_users": false
 }
